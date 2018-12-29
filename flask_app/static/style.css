@@ -1,0 +1,84 @@
+html, body {
+    background-color: lightblue;
+    /* background-image: url("flask_app/static/bg.jpg"); */
+    margin:0;
+    padding:0;
+  }
+html * {
+    font-family: 'Charm', cursive;
+}
+
+.center {
+    margin-left: 450px;
+    text-align: center;
+}
+ul {
+    text-align: center;
+}
+
+h1 {
+    color: darkblue;
+    font-size: 100px;
+}
+p {
+    font-size: 50px;
+}
+form {
+    margin-left: 450px;
+    width: 400px;
+    text-align: center;
+}
+.row {
+    display: flex;
+  }
+  
+.column {
+    flex: 33.3%;
+    text-align: center;
+  }
+.size {
+    height: 25px;
+    width: 25px;
+}
+.size2 {
+    height: 250px;
+    width: 250px;
+}
+.size3 {
+    height: 200px;
+    width: 200px;
+}
+.pad {
+    padding-top: 100px;
+}
+.wrapper {
+    text-align: center;
+}
+ul li * {
+    text-decoration: none !important;
+    /* font-size: 50px; */
+}
+.zoom {
+    padding-top: 75px;
+    transition: transform .2s;
+    margin: 0 auto;
+}
+  
+.zoom:hover {
+    transform: scale(1.1);
+}
+div a {
+    text-decoration: none !important;
+}
+ul {
+    list-style-type: none !important;
+}
+.center {
+    padding: 70px 0;
+    border: 3px solid green;
+    text-align: center;
+  }
+
+div ul li {
+    font-size: 30px;
+}

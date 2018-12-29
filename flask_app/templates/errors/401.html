@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="wrapper">
+        <h1>No user found. (401)</h1>
+        <p>You need to login first to access this feature. <a href="{{ url_for('login') }}">Login</a></p>
+        <small>Haven't created an account yet? <a href="{{ url_for('register') }}">Register</a></small>
+    </div>
+{% endblock content %}

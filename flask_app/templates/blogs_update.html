@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block links %}
+{% endblock links %}
+
+{% block content %}
+    <div>
+        <form action="" method='POST'>
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>Blog Post</legend>
+                <div>
+                    {{ form.title.label(class="form-control-label") }}
+                    {{ form.title(class="form-control form-control-lg") }}
+                    {% if form.title.errors %}
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.content.label(class="form-control-label") }}
+                    {{ form.content(class="form-control form-control-lg") }}
+                    {% if form.content.errors %}
+                        {% for error in form.content.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div>
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

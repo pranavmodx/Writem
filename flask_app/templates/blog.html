@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block links %}
+{% endblock links %}
+
+{% block content %}
+    <div>
+        <form action="" method='POST'>
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>Blog Post</legend>
+                <div>
+                    {{ form.title.label(class="form-control-label") }}
+                    {{ form.title(class="form-control form-control-lg") }}
+                    {% if form.title.errors %}
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.content.label(class="form-control-label") }}
+                    {{ form.content(class="form-control form-control-lg") }}
+                    {% if form.content.errors %}
+                        {% for error in form.content.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div>
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+            <div>
+                <ul>
+                    <h2>Posts</h2>
+                        {% for post in posts %}
+                            {% if post.user == current_user %}
+                                {% if post.content %}
+                                    <li>{{ post.title}} <br> {{post.content }}</li>
+                                {% else %}
+                                    <li>{{ post.title}}</li>
+                                {% endif %}
+                                <a href="{{ url_for('blog_update', id=post.id) }}"><img src="{{ url_for('static', filename = 'icons/edit.png') }}" class="size">Update</a>
+                                <a href="{{ url_for('blog_delete', id=post.id) }}"><img src="{{ url_for('static', filename = 'icons/cancel.png') }}" class="size">Delete</a>
+                                <br><br><br>
+                            {% endif %}
+                        {% endfor %}
+                </ul>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

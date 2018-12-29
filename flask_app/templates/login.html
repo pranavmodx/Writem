@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="POST" action="" class="justify-content-center">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+        <!-- <legend>Login</legend> -->
+        <div class="form-group">
+            {{ form.email.label(class="form-control-label") }}
+            {{ form.email(class="form-control form-control-lg") }}
+            <div>
+                {% if form.email.errors %}
+                {% for error in form.email.errors  %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form.password.label(class="form-control-label") }}
+            {{ form.password(class="form-control form-control-lg") }}
+            {% if form.password.errors %}
+                {% for error in form.password.errors  %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </fieldset>
+        <div class="form-group">
+            {{ form.remember(class="form-check-input") }}
+            {{ form.remember.label(class="form-check-label") }}
+        </div>
+        <div>
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+        <div>
+            <small class="text-muted">
+                Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a>
+            </small>
+        </div>
+</form>
+
+{% endblock content %}
+
+
+

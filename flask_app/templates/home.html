@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="wrapper">
+        <h1>Welcome</h1>
+        <h3>What would you like to do?</h3>
+    </div>
+
+    <div class="row">
+        <div class="column zoom">
+            <a href="{{ url_for('todo') }}"><img src="{{ url_for('static', filename = 'icons/todo.png') }}" class="size2" style="width: 300px;">Todo List</a>
+        </div>
+        <div class="column zoom">
+            <a href="{{ url_for('blog') }}"><img src="{{ url_for('static', filename = 'icons/blog.png') }}" class="size2">Blog Post</a>
+        </div>
+        <div class="column zoom">
+            <a href="{{ url_for('facts_finder') }}"><img src="{{ url_for('static', filename = 'icons/number.png') }}" class="size3">Number Facts</a>
+        </div>
+    </div>
+{% endblock content %}
+
