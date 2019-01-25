@@ -1,20 +1,26 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="wrapper">
+    <div class="container">
         <h1>Welcome</h1>
         <h3>What would you like to do?</h3>
+        <hr>
+        <div class="row">
+            <div class="col-4 zoom">
+                <a href="{{ url_for('todo') }}"><img src="{{ url_for('static', filename = 'icons/todo.png') }}" class="size2" style="width: 300px;"></a>
+                <p class="text-success">Todo List</p>    
+            </div>
+            <div class="col-4 zoom">
+                <a href="{{ url_for('blog') }}"><img src="{{ url_for('static', filename = 'icons/blog.png') }}" class="size2"></a>
+                <p class="text-danger">Blog Post</p>
+            </div>
+            <div class="col-4 zoom numpad">
+                <a href="{{ url_for('facts_finder') }}"><img src="{{ url_for('static', filename = 'icons/number.png') }}" class="size3"></a>
+                <br><br>
+                <p class='text-dark'>Number Facts</p>
+            </div>
+        </div>
+        <hr>
     </div>
 
-    <div class="row">
-        <div class="column zoom">
-            <a href="{{ url_for('todo') }}"><img src="{{ url_for('static', filename = 'icons/todo.png') }}" class="size2" style="width: 300px;">Todo List</a>
-        </div>
-        <div class="column zoom">
-            <a href="{{ url_for('blog') }}"><img src="{{ url_for('static', filename = 'icons/blog.png') }}" class="size2">Blog Post</a>
-        </div>
-        <div class="column zoom">
-            <a href="{{ url_for('facts_finder') }}"><img src="{{ url_for('static', filename = 'icons/number.png') }}" class="size3">Number Facts</a>
-        </div>
-    </div>
 {% endblock content %}
 

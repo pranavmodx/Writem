@@ -7,10 +7,14 @@
     <div>
         <form action="" method='POST'>
             {{ form.hidden_tag() }}
+            <br>
             <fieldset>
-                <legend>Blog Post</legend>
+                <!-- <br> -->
+                <legend class="h1">Blog Post</legend>
+                <hr>
+                <br><br>
                 <div>
-                    {{ form.title.label(class="form-control-label") }}
+                    {{ form.title.label(class="form-control-label h2") }}
                     {{ form.title(class="form-control form-control-lg") }}
                     {% if form.title.errors %}
                         {% for error in form.title.errors %}
@@ -19,7 +23,7 @@
                     {% endif %}
                 </div>
                 <div>
-                    {{ form.content.label(class="form-control-label") }}
+                    {{ form.content.label(class="form-control-label h2") }}
                     {{ form.content(class="form-control form-control-lg") }}
                     {% if form.content.errors %}
                         {% for error in form.content.errors %}
@@ -28,8 +32,9 @@
                     {% endif %}
                 </div>
             </fieldset>
+            <br>
             <div>
-                {{ form.submit(class="btn btn-outline-info") }}
+                {{ form.submit(class="btn btn-outline-info btn-lg") }}
             </div>
             <div>
                 <ul>

@@ -7,10 +7,13 @@
     <div>
         <form action="" method='POST'>
             {{ form.hidden_tag() }}
+            <br>
             <fieldset>
-                <legend>Todo List</legend>
+                <legend class="h1">Todo List</legend>
+                <hr>
+                <br><br>
                 <div>
-                    {{ form.title.label(class="form-control-label") }}
+                    {{ form.title.label(class="form-control-label h2") }}
                     {{ form.title(class="form-control form-control-lg") }}
                     {% if form.title.errors %}
                         {% for error in form.title.errors %}
@@ -19,7 +22,7 @@
                     {% endif %}
                 </div>
                 <div>
-                    {{ form.desc.label(class="form-control-label") }}
+                    {{ form.desc.label(class="form-control-label h2") }}
                     {{ form.desc(class="form-control form-control-lg") }}
                     {% if form.desc.errors %}
                         {% for error in form.desc.errors %}
@@ -28,46 +31,47 @@
                     {% endif %}
                 </div>
             </fieldset>
+            <br>
             <div>
-                {{ form.submit(class="btn btn-outline-info") }}
-            </div>
-            <div class="row">
-                <div class="column">
-                    <ul>
-                        <h2>Completed</h2>
-                        {% for task in complete %}
-                            {% if task.user == current_user %}
-                                {% if task.desc %}
-                                    <li>{{ task.title}} - {{task.desc }}</li>
-                                {% else %}
-                                    <li>{{ task.title}}</li>
-                                {% endif %}
-                                <a href="{{ url_for('incomplete', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/redo.png') }}" class="size">Mark as not done/Redo</a>
-                                <a href="{{ url_for('todo_update', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/edit.png') }}" class="size">Edit</a>
-                                <a href="{{ url_for('todo_delete', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/cancel.png') }}" class="size">Delete</a>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="column">
-                    <ul>
-                        <h2>Incomplete</h2>
-                        {% for task in incomplete %}
-                            {% if task.user == current_user %}
-                                {% if task.desc %}
-                                    <li>{{ task.title}} - {{task.desc }}</li>
-                                {% else %}
-                                    <li>{{ task.title}}</li>
-                                {% endif %}
-                                <a href="{{ url_for('complete', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/done.png') }}" class="size">Mark as done</a>
-                                <a href="{{ url_for('todo_update', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/edit.png') }}" class="size">Edit</a>
-                                <a href="{{ url_for('todo_delete', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/cancel.png') }}" class="size">Delete</a>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+                {{ form.submit(class="btn btn-outline-info btn-lg") }}
+            <br><br>
+            <hr>
         </form>
+        <div class="row">
+            <div class="col-6">
+                <ul class="list-group">
+                    <h1>Complete</h1>
+                    {% for task in complete %}
+                        {% if task.user == current_user %}
+                            {% if task.desc %}
+                                <li class="list-group-item">{{ task.title}} - {{task.desc }}</li>
+                            {% else %}
+                                <li class="list-group-item">{{ task.title}}</li>
+                            {% endif %}
+                            <a href="{{ url_for('incomplete', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/redo.png') }}" class="size">Mark as not done/Redo</a>
+                            <a href="{{ url_for('todo_update', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/edit.png') }}" class="size">Edit</a>
+                            <a href="{{ url_for('todo_delete', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/cancel.png') }}" class="size">Delete</a>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-6">
+                <ul class="list-group">
+                    <h1>Incomplete</h1>
+                    {% for task in incomplete %}
+                        {% if task.user == current_user %}
+                            {% if task.desc %}
+                                <li class="list-group-item">{{ task.title}} - {{task.desc }}</li>
+                            {% else %}
+                                <li class="list-group-item">{{ task.title}}</li>
+                            {% endif %}
+                            <a href="{{ url_for('complete', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/done.png') }}" class="size">Mark as done</a>
+                            <a href="{{ url_for('todo_update', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/edit.png') }}" class="size">Edit</a>
+                            <a href="{{ url_for('todo_delete', id=task.id) }}"><img src="{{ url_for('static', filename = 'icons/cancel.png') }}" class="size">Delete</a>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
     </div>
 
 {% endblock content %}

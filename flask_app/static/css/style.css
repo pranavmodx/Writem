@@ -16,10 +16,10 @@ ul {
     text-align: center;
 }
 
-h1 {
+/* h1 {
     color: darkblue;
     font-size: 100px;
-}
+} */
 p {
     font-size: 50px;
 }
@@ -59,9 +59,13 @@ ul li * {
     /* font-size: 50px; */
 }
 .zoom {
-    padding-top: 75px;
+    padding-top: 10px;
     transition: transform .2s;
     margin: 0 auto;
+}
+
+.numpad {
+    padding-top: 35px;
 }
   
 .zoom:hover {

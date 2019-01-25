@@ -6,7 +6,7 @@
     <fieldset class="form-group">
         <!-- <legend>Login</legend> -->
         <div class="form-group">
-            {{ form.email.label(class="form-control-label") }}
+            {{ form.email.label(class="form-control-label h2") }}
             {{ form.email(class="form-control form-control-lg") }}
             <div>
                 {% if form.email.errors %}
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="form-group">
-            {{ form.password.label(class="form-control-label") }}
+            {{ form.password.label(class="form-control-label h2") }}
             {{ form.password(class="form-control form-control-lg") }}
             {% if form.password.errors %}
                 {% for error in form.password.errors  %}
@@ -28,13 +28,13 @@
     </fieldset>
         <div class="form-group">
             {{ form.remember(class="form-check-input") }}
-            {{ form.remember.label(class="form-check-label") }}
+            {{ form.remember.label(class="form-check-label h2") }}
         </div>
         <div>
-            {{ form.submit(class="btn btn-outline-info") }}
+            {{ form.submit(class="btn btn-outline-info btn-lg") }}
         </div>
         <div>
-            <small class="text-muted">
+            <small class="text-muted h4">
                 Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a>
             </small>
         </div>
