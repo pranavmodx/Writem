@@ -7,7 +7,7 @@ A simple web application built using Flask framework for Python. It has features
 
 ## Usage
 
-* Clone the source code
+* Clone/Download the source code
 
 * Create virtual environment (pipenv) : 
   ```
