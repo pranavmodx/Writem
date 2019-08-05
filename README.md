@@ -20,6 +20,6 @@ A simple web application built using Flask framework for Python. It has features
   python3 run.py
   ```
   
-* Copy paste localhost url (usually localhost:5000/) and paste in browser
+* Copy the localhost url (usually localhost:5000/) and paste in browser
 
 * Navigate through the project
