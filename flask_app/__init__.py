@@ -18,5 +18,3 @@ Bootstrap(app)
 datepicker(app)
 
 from flask_app import routes
-
-

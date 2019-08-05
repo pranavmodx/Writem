@@ -170,6 +170,7 @@ def blog():
 @app.route('/blog/<id>/delete')
 def blog_delete(id):
     # post = Blog.query.filter_by(id=id).first()
+    print(id)
     post = Todo.query.get_or_404(id)
 
     # if post.user != current_user:
